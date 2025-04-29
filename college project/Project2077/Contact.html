@@ -56,7 +56,7 @@
             </div>
             <div class="form-container">
               
-                <form id="appointmentForm" class="flex-form" action="payment.html" method="GET">
+              <form id="appointmentForm" class="flex-form" action="send_email.php" method="POST">
 
                 <h2>Book an Appointment</h2>
                 <div class="form-group">
@@ -118,6 +118,8 @@
                 <div class="form-group">
                   <button type="submit" class="submit-btn">Submit</button>
                 </div>
+
+                <input type="hidden" name="form_type" value="appointment">
                 
                 </form>
           </div>
