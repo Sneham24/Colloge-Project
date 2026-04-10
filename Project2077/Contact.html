@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Parent Bless</title>
+    <link rel="icon" href="Images/LOGO 1.png" type="image/png">    
+    <link rel="stylesheet" href="Contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav id="navbar">          
+            <ul>
+              <li>
+                <a href="Homepage.html">
+                  <img src="Images/LOGO 1.png" alt="logo image 1" width="70px" height="70px">
+                  <img src="Images/parent_bless_transparent.png" alt="logo 2" height="60px">
+                </a>
+              </li>
+            </ul>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Bookings.html">Bookings</a></li>
+                <li>
+                  <div class="dropdown">
+                    <button class="dropbtn"><b>Services</b></button>
+                    <div class="dropdown-content">
+                        <a href="Physiotherapy.html">Physiotherapy</a>
+                        <a href="Chiropractic Therapy.html">Chiropractic Therapy</a>
+                        <a href="SportsTherapy.html">Sports Therapy</a>
+                        <a href="AlternativeTherapy.html">Alternative Therapy</a>
+                    </div>
+                  </div>
+                </li>
+                <li><a href="Aboutpg.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-contact">
+        <h1>Contact Us</h1>
+        <p>Get in touch with us for inquiries or any assistance.</p>
+    </section>
+
+    <section class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2>Our Location</h2>
+                <p>D-13, Rashmi Residency, Saraswat Bank Lane, Opp Shalibhadra Regency, Vasai Nalasopara link road, Nalasopara East.</p>
+                <h2>Call Us</h2>
+                <p>+91 7558766940</p>
+                <h2>Email</h2>
+                <p><a href="mailto:pbpainreliefhub@gmail.com">pbpainreliefhub@gmail.com</a>
+                </p>
+            </div>
+            <div class="form-container">
+              
+              <form id="appointmentForm" class="flex-form" action="/send_email" method="POST">
+
+                <h2>Enquiry</h2>
+                <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input type="text" id="name" name="name" required><br>
+                  <label for="Email">Email</label>
+                  <input type="email" id="Email" name="Email" required><br>
+                  <label for="Contact">Contact Number</label>
+                  <input type="tel" id="Contact" name="Contact" required><br>
+                
+                <div class="form-group">
+                  <button type="submit" class="submit-btn">Submit</button>
+                </div>
+
+                <input type="hidden" name="form_type" value="appointment">
+                
+                </form>
+          </div>
+    </section>
+
+    <footer class="footer-medical">
+      <div class="footer-grid">
+        <div>
+          <h4>About</h4>
+          <p>Parent Bless Clinic offers expert treatments and health consultations.</p>
+        </div>
+        <div>
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="Bookings.html">Appointments</a></li>
+                  <li><a href="Chiropractic Therapy.html">Chiropractic Therapy</a></li>
+                  <li><a href="Physiotherapy.html">Physiotherapy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p><a href="mailto:pbpainreliefhub@gmail.com">pbpainreliefhub@gmail.com</a></p>
+          <p>Phone: +91 7558766940</p>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/917558766940?text=Hi%2C%20I%20am%20interested%20in%20your%20services.%0APlease%20tell%20me%20more%20about%20the%20available%20treatments." target="_blank">
+          <i class="fab fa-whatsapp"></i>
+          <a href="https://youtube.com/@drvivekshukla?si=Z8mkxIyNbNjfgv4r" target="_blank"> <i class="fab fa-youtube" ></i></a>  
+        </a>
+      </div>
+      <div class="footer-copy">
+        <p>© 2025 Parent Bless. All rights reserved</p>
+      </div>
+    </footer>
+
+    <script>
+      const otherOption = document.getElementById('otherOption');
+      const otherBox = document.getElementById('otherBox');
+      const homeServiceBox = document.getElementById('homeServiceBox');
+    
+      document.querySelectorAll('input[name="service"]').forEach((radio) => {
+        radio.addEventListener('change', function () {
+          const selectedValue = this.value;
+    
+          // Show Other Box if "Other" selected (not used in your UI currently but kept safe)
+          if (otherOption && otherOption.checked) {
+            otherBox.style.display = 'block';
+          } else {
+            otherBox.style.display = 'none';
+          }
+    
+          // Show Home Service Message Box
+          if (selectedValue === "Home Service") {
+            homeServiceBox.style.display = 'block';
+          } else {
+            homeServiceBox.style.display = 'none';
+          }
+        });
+      });
+    
+      const dateInput = document.getElementById("date");
+      const timeSelect = document.getElementById("time");
+      const timeGroup = document.getElementById("timeGroup");
+    
+      const slots = {
+        weekday: [
+          "8:00 AM - 9:00 AM",
+          "12:30 PM - 2:00 PM",
+          "6:00 PM - 10:00 PM"
+        ],
+        sunday: [
+          "10:00 AM - 2:00 PM",
+          "6:30 PM - 9:30 PM"
+        ]
+      };
+    
+      dateInput.addEventListener("change", () => {
+        const selectedDate = new Date(dateInput.value);
+        const day = selectedDate.getDay();
+    
+        timeSelect.innerHTML = '<option value="">-- Select Time Slot --</option>';
+        const selectedSlots = day === 0 ? slots.sunday : slots.weekday;
+    
+        selectedSlots.forEach(slot => {
+          const option = document.createElement("option");
+          option.value = slot;
+          option.textContent = slot;
+          timeSelect.appendChild(option);
+        });
+    
+        timeGroup.style.display = "block";
+      });
+    </script>
+    
+
+</body>
+</html>
