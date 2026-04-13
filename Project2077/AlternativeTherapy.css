@@ -43,7 +43,9 @@
   }
   .therapy-box img{width: 100%;
     border-radius: 80px;
-    height: 55%;}
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;}
 
   .hero-services {
     text-align: center;
@@ -251,4 +253,127 @@ nav ul li a {
     border-top: 1px solid #000000;
     padding-top: 10px;
   }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0rem 0.5rem 2rem 0.5rem;
+  }
   
+  .alt-therapy h1 {
+    font-size: 2rem;
+  }
+  
+  .intro-text {
+    font-size: 1rem;
+    margin: 0 auto 2rem;
+  }
+  
+  .hero-services {
+    padding: 40px 15px;
+  }
+  
+  .hero-services h1 {
+    font-size: 28px;
+  }
+  
+  .hero-services p {
+    font-size: 16px;
+  }
+  
+  .therapy-boxes {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .therapy-box {
+    padding: 1.5rem;
+  }
+  
+  .therapy-box h3 {
+    font-size: 1.2rem;
+  }
+  
+  .therapy-box p {
+    font-size: 0.9rem;
+  }
+  
+  #navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  #navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  #navbar img {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  nav ul li {
+    margin: 5px 0;
+  }
+  
+  nav ul li a {
+    font-size: 16px;
+  }
+  
+  .dropdown-content {
+    position: static;
+    display: none;
+    background: #badffc;
+    min-width: 100%;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0rem 0.5rem 2rem 0.5rem;
+  }
+  
+  .alt-therapy h1 {
+    font-size: 1.8rem;
+  }
+  
+  .intro-text {
+    font-size: 0.9rem;
+  }
+  
+  .hero-services h1 {
+    font-size: 24px;
+  }
+  
+  .hero-services p {
+    font-size: 14px;
+  }
+  
+  .therapy-box {
+    padding: 1rem;
+  }
+  
+  .therapy-box h3 {
+    font-size: 1.1rem;
+  }
+  
+  .therapy-box p {
+    font-size: 0.85rem;
+  }
+  
+  .footer-grid div {
+    min-width: 100%;
+    text-align: center;
+  }
+  
+  .social-icons a {
+    font-size: 18px;
+    margin: 0 5px;
+  }
+}

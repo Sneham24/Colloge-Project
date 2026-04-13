@@ -181,10 +181,10 @@ nav ul li a {
     flex-direction: column;
     gap: 20px;
     background: #fff;
-    padding: 30px 100px 20px;
+    padding: 30px;
     border-radius: 12px;
     max-width: 500px;
-    width: 400px;
+    width: 100%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
   
@@ -212,8 +212,8 @@ nav ul li a {
   
   .service-options {
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    flex-direction: column;
+    gap: 10px;
   }
   .service-options ul{
     list-style: none;
@@ -302,3 +302,122 @@ nav ul li a {
     border-top: 1px solid #000000;
     padding-top: 10px;
   }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-contact {
+    padding: 40px 15px;
+  }
+  
+  .hero-contact h1 {
+    font-size: 28px;
+  }
+  
+  .hero-contact p {
+    font-size: 16px;
+  }
+  
+  .contact-section {
+    padding: 20px 15px;
+  }
+  
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .contact-info, .contact-form {
+    min-width: 100%;
+  }
+  
+  .form-container {
+    padding: 20px;
+  }
+  
+  .flex-form {
+    padding: 20px;
+  }
+  
+  #navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  #navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  #navbar img {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  nav ul li {
+    margin: 5px 0;
+  }
+  
+  nav ul li a {
+    font-size: 16px;
+  }
+  
+  .dropdown-content {
+    position: static;
+    display: none;
+    background: #badffc;
+    min-width: 100%;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-contact h1 {
+    font-size: 24px;
+  }
+  
+  .hero-contact p {
+    font-size: 14px;
+  }
+  
+  .contact-info h2, .contact-form h2 {
+    font-size: 20px;
+  }
+  
+  .contact-info p {
+    font-size: 14px;
+  }
+  
+  .form-container {
+    padding: 15px;
+  }
+  
+  .flex-form {
+    padding: 15px;
+  }
+  
+  .form-group label {
+    font-size: 14px;
+  }
+  
+  input, textarea {
+    font-size: 14px;
+  }
+  
+  .submit-btn {
+    font-size: 14px;
+  }
+  
+  .footer-grid div {
+    min-width: 100%;
+    text-align: center;
+  }
+  
+  .social-icons a {
+    font-size: 18px;
+    margin: 0 5px;
+  }
+}

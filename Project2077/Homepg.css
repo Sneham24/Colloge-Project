@@ -49,11 +49,11 @@ h1 {
   color: #333;
 }
 .hero-image img {
-width: 710px;
-height: 290px;
+width: 100%;
+max-width: 710px;
+height: auto;
 border-radius: 10px;
 box-shadow: 0 4px 8px rgba(236, 234, 234, 0.1);
-
 }
 
 
@@ -503,6 +503,142 @@ nav ul li a {
   font-size: 15px;
   border-top: 1px solid #000000;
   padding-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    padding: 40px 15px;
+  }
+  
+  .hero-content {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  h1 {
+    font-size: 28px;
+  }
+  
+  .hero-content h1 {
+    font-size: 28px;
+  }
+  
+  .subheading {
+    font-size: 16px;
+  }
+  
+  .welcome-wrapper {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+  }
+  
+  .welcome-container, .right-box {
+    min-width: 100%;
+  }
+  
+  .services-container {
+    max-width: 100vw;
+  }
+  
+  .service-item {
+    width: 200px;
+  }
+  
+  .why-container {
+    flex-direction: column;
+  }
+  
+  .why-item {
+    min-width: 100%;
+  }
+  
+  .testimonial-slider {
+    margin: 30px 20px;
+    padding: 20px;
+  }
+  
+  .slide p {
+    font-size: 16px;
+  }
+  
+  #navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  #navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  #navbar img {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  nav ul li {
+    margin: 5px 0;
+  }
+  
+  nav ul li a {
+    font-size: 16px;
+  }
+  
+  .dropdown-content {
+    position: static;
+    display: none;
+    background: #badffc;
+    min-width: 100%;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+  }
+  
+  .hero-content h1 {
+    font-size: 24px;
+  }
+  
+  .subheading {
+    font-size: 14px;
+  }
+  
+  .service-item {
+    width: 150px;
+    padding: 15px;
+  }
+  
+  .welcome-container, .right-box {
+    padding: 15px;
+  }
+  
+  .testimonial-slider {
+    padding: 15px;
+  }
+  
+  .slide p {
+    font-size: 14px;
+  }
+  
+  .footer-grid div {
+    min-width: 100%;
+    text-align: center;
+  }
+  
+  .social-icons a {
+    font-size: 18px;
+    margin: 0 5px;
+  }
 }
 
 

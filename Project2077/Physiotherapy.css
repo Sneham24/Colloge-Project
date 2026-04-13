@@ -38,7 +38,9 @@
 .service-box img {
     width: 100%;
     border-radius: 80px;
-    height: 55%;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
 }
 .service-box h3 {
     font-size: 22px;
@@ -210,4 +212,108 @@ nav ul li a {
     border-top: 1px solid #000000;
     padding-top: 10px;
   }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-services {
+    padding: 40px 15px;
+  }
+  
+  .hero-services h1 {
+    font-size: 28px;
+  }
+  
+  .hero-services p {
+    font-size: 16px;
+  }
+  
+  .services-section {
+    padding: 30px 15px;
+  }
+  
+  .service-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .service-box {
+    padding: 15px;
+    border-radius: 15px;
+  }
+  
+  .service-box h3 {
+    font-size: 20px;
+  }
+  
+  .service-box p {
+    font-size: 14px;
+  }
+  
+  #navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  #navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  #navbar img {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  nav ul li {
+    margin: 5px 0;
+  }
+  
+  nav ul li a {
+    font-size: 16px;
+  }
+  
+  .dropdown-content {
+    position: static;
+    display: none;
+    background: #badffc;
+    min-width: 100%;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-services h1 {
+    font-size: 24px;
+  }
+  
+  .hero-services p {
+    font-size: 14px;
+  }
+  
+  .service-box {
+    padding: 10px;
+  }
+  
+  .service-box h3 {
+    font-size: 18px;
+  }
+  
+  .service-box p {
+    font-size: 13px;
+  }
+  
+  .footer-grid div {
+    min-width: 100%;
+    text-align: center;
+  }
+  
+  .social-icons a {
+    font-size: 18px;
+    margin: 0 5px;
+  }
+}
   

@@ -327,7 +327,140 @@
     border-top: 1px solid #000000;
     padding-top: 10px;
   }
+
+.therapy-box img{
+    width: 100%;
+    border-radius: 80px;
+    height: auto;
+    max-height: 200px;
+    object-fit: cover;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero {
+    padding: 40px 15px;
+  }
   
+  .hero h1 {
+    font-size: 2rem;
+  }
+  
+  .hero p {
+    font-size: 1rem;
+  }
+  
+  .overview h2 {
+    font-size: 1.5rem;
+  }
+  
+  .overview p {
+    font-size: 1rem;
+  }
+  
+  .benefits {
+    padding: 2rem 1rem;
+  }
+  
+  .benefits h2 {
+    font-size: 1.5rem;
+  }
+  
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .treatments h2 {
+    font-size: 1.5rem;
+  }
+  
+  .cta {
+    padding: 2rem 1rem;
+  }
+  
+  .cta h3 {
+    font-size: 1.5rem;
+  }
+  
+  #navbar {
+    flex-direction: column;
+    padding: 15px;
+  }
+  
+  #navbar ul {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+  
+  #navbar img {
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  nav ul li {
+    margin: 5px 0;
+  }
+  
+  nav ul li a {
+    font-size: 16px;
+  }
+  
+  .dropdown-content {
+    position: static;
+    display: none;
+    background: #badffc;
+    min-width: 100%;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+  
+  .hero p {
+    font-size: 0.9rem;
+  }
+  
+  .overview h2 {
+    font-size: 1.3rem;
+  }
+  
+  .overview p {
+    font-size: 0.9rem;
+  }
+  
+  .benefit-card {
+    padding: 1rem;
+  }
+  
+  .treatment-list li {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+  }
+  
+  .cta-button {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .footer-grid div {
+    min-width: 100%;
+    text-align: center;
+  }
+  
+  .social-icons a {
+    font-size: 18px;
+    margin: 0 5px;
+  }
+}
+
 .doctor-section {
         display: grid;
         align-items: end;
