@@ -4,13 +4,118 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You | Parent Bless</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="Images/LOGO 1.png" type="image/png">
+    <link rel="stylesheet" href="Homepg.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .thank-you-container {
+            text-align: center;
+            padding: 100px 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .thank-you-container h1 {
+            color: #2c3e50;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .thank-you-container p {
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .home-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        .home-button:hover {
+            background: linear-gradient(45deg, #2980b9, #3498db);
+            transform: translateY(-2px);
+        }
+        .success-icon {
+            font-size: 4em;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <nav id="navbar">          
+            <ul>
+              <li>
+                <a href="Homepage.html"><img src="Images/LOGO 1.png" alt="logo image 1" width="70px" height="70px">
+                  <img src="Images/parent_bless_transparent.png" alt="logo 2" height="60px"></a></li>
+            </ul>
+            <ul>
+                <li><a href="Homepage.html">Home</a></li>
+                <li><a href="Bookings.html">Bookings</a></li>
+                <li>
+                  <div class="dropdown">
+                    <button class="dropbtn"><b>Services</b></button>
+                    <div class="dropdown-content">
+                        <a href="Physiotherapy.html">Physiotherapy</a>
+                        <a href="Chiropractic Therapy.html">Chiropractic Therapy</a>
+                        <a href="SportsTherapy.html">Sports Therapy</a>
+                        <a href="AlternativeTherapy.html">Alternative Therapy</a>
+                    </div>
+                  </div></li>
+                <li><a href="Aboutpg.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <div class="thank-you-container">
+        <div class="success-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
         <h1>Thank You!</h1>
-        <p>Your appointment request has been received. We will contact you shortly to confirm your booking.</p>
+        <p>Your appointment request has been received successfully. We will contact you shortly to confirm your booking details.</p>
+        <p><strong>What happens next?</strong></p>
+        <p>Our team will review your request and contact you within 24 hours to confirm your appointment slot and answer any questions you may have.</p>
         <a href="Homepage.html" class="home-button">Back to Home</a>
     </div>
+
+    <footer class="footer-medical">
+      <div class="footer-grid">
+        <div>
+          <h4>About</h4>
+          <p>Parent Bless Clinic offers expert treatments and health consultations.</p>
+        </div>
+        <div>
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="Bookings.html">Appointments</a></li>
+            <li><a href="Chiropractic Therapy.html">Chiropractic Therapy</a></li>
+            <li><a href="Physiotherapy.html">Physiotherapy</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p><a href="mailto:pbpainreliefhub@gmail.com">pbpainreliefhub@gmail.com</a></p>
+          <p>Phone: +91 7558766940</p>
+        </div>
+      </div>
+
+      <div class="social-icons">
+        <a href="https://www.facebook.com/share/1AUA9A8oG3/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/drviveka.shukla?utm_source=qr&igsh=MTA2dDNodjhlZzNvag==" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/917558766940?text=Hi%2C%20I%20am%20interested%20in%20your%20services.%0APlease%20tell%20me%20more%20about%20the%20available%20treatments." target="_blank">
+          <i class="fab fa-whatsapp"></i></a>
+        <a href="https://youtube.com/@drvivekshukla?si=Z8mkxIyNbNjfgv4r" target="_blank"> <i class="fab fa-youtube" ></i></a>  
+      </div>
+
+      <div class="footer-copy">
+        <p> 2025 Parent Bless. All rights reserved</p>
+      </div>
+    </footer>
 </body>
 </html>

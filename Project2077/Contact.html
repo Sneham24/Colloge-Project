@@ -57,7 +57,7 @@
             </div>
             <div class="form-container">
               
-              <form id="appointmentForm" class="flex-form" action="/send_email" method="POST">
+              <form id="contactForm" class="flex-form" onsubmit="handleContactSubmit(event)">
 
                 <h2>Enquiry</h2>
                 <div class="form-group">
@@ -67,12 +67,13 @@
                   <input type="email" id="Email" name="Email" required><br>
                   <label for="Contact">Contact Number</label>
                   <input type="tel" id="Contact" name="Contact" required><br>
-                
-                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+                </div>
                   <button type="submit" class="submit-btn">Submit</button>
                 </div>
 
-                <input type="hidden" name="form_type" value="appointment">
+                <input type="hidden" name="form_type" value="contact">
                 
                 </form>
           </div>
@@ -112,62 +113,67 @@
     </footer>
 
     <script>
-      const otherOption = document.getElementById('otherOption');
-      const otherBox = document.getElementById('otherBox');
-      const homeServiceBox = document.getElementById('homeServiceBox');
-    
-      document.querySelectorAll('input[name="service"]').forEach((radio) => {
-        radio.addEventListener('change', function () {
-          const selectedValue = this.value;
-    
-          // Show Other Box if "Other" selected (not used in your UI currently but kept safe)
-          if (otherOption && otherOption.checked) {
-            otherBox.style.display = 'block';
+      // Contact form submission handler
+      function handleContactSubmit(event) {
+        event.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(document.getElementById('contactForm'));
+        const data = Object.fromEntries(formData);
+        
+        // Debug: Log form data
+        console.log('Contact form data:', data);
+        
+        // Show loading message
+        const submitBtn = document.querySelector('.submit-btn');
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+        
+        // Send email using Formspree (free email service)
+        fetch('https://formspree.io/f/xkndzqvl', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            ...data,
+            _subject: `New Contact Enquiry from ${data.name}`,
+            _template: 'table'
+          })
+        })
+        .then(response => {
+          if (response.ok) {
+            // Success - show success message and redirect
+            alert('Contact form submitted successfully! We will get back to you within 24 hours.');
+            window.location.href = 'thank_you.html';
           } else {
-            otherBox.style.display = 'none';
+            throw new Error('Failed to send enquiry');
           }
-    
-          // Show Home Service Message Box
-          if (selectedValue === "Home Service") {
-            homeServiceBox.style.display = 'block';
-          } else {
-            homeServiceBox.style.display = 'none';
-          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          // Fallback to mailto if Formspree fails
+          const emailSubject = `New Contact Enquiry from ${data.name}`;
+          let emailBody = "New Contact Enquiry\n\n";
+          emailBody += `Name: ${data.name}\n`;
+          emailBody += `Email: ${data.Email}\n`;
+          emailBody += `Contact Number: ${data.Contact}\n`;
+          emailBody += `Message: ${data.message}\n\n`;
+          emailBody += "Please respond to this enquiry at your earliest convenience.";
+          
+          const mailtoLink = `mailto:pbpainreliefhub@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+          window.location.href = mailtoLink;
+          
+          alert('There was an issue with the automatic submission. Your email client has been opened with the enquiry details. Please send the email manually.');
+        })
+        .finally(() => {
+          // Reset button
+          submitBtn.textContent = originalText;
+          submitBtn.disabled = false;
         });
-      });
-    
-      const dateInput = document.getElementById("date");
-      const timeSelect = document.getElementById("time");
-      const timeGroup = document.getElementById("timeGroup");
-    
-      const slots = {
-        weekday: [
-          "8:00 AM - 9:00 AM",
-          "12:30 PM - 2:00 PM",
-          "6:00 PM - 10:00 PM"
-        ],
-        sunday: [
-          "10:00 AM - 2:00 PM",
-          "6:30 PM - 9:30 PM"
-        ]
-      };
-    
-      dateInput.addEventListener("change", () => {
-        const selectedDate = new Date(dateInput.value);
-        const day = selectedDate.getDay();
-    
-        timeSelect.innerHTML = '<option value="">-- Select Time Slot --</option>';
-        const selectedSlots = day === 0 ? slots.sunday : slots.weekday;
-    
-        selectedSlots.forEach(slot => {
-          const option = document.createElement("option");
-          option.value = slot;
-          option.textContent = slot;
-          timeSelect.appendChild(option);
-        });
-    
-        timeGroup.style.display = "block";
-      });
+      }
     </script>
     
 
